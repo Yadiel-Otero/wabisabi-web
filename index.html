@@ -162,7 +162,6 @@
 
     <!-- Temporary scripts -->
     <script>
-
         let cardsGrid = document.querySelector('.cards-grid');
 
         //Done
@@ -183,12 +182,11 @@
 
         //Not done
         //create as many cards as there are results
-        let displayData = (data) => {
+        function displayData (data){
             cardsGrid.innerHTML = '';
+
             for (let i = 0; i < data.data.length; i++){
                 const image = data.data[i].images.jpg.large_image_url;
-                console.log(image);
-
                 
                 let card = document.createElement('div');
                 card.className = 'card';
@@ -197,15 +195,9 @@
                 img.src = image;
 
                 card.appendChild(img);
-
                 cardsGrid.appendChild(card);      
             }
         }
-
-       
-
-
-
     </script>
 </body>
 
